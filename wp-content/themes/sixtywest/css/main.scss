@@ -1,0 +1,739 @@
+/* CSS Document */
+$blue: #0e4e6c;
+$lightblue: #3599be;
+$mainfont: 'Bitter', serif;
+$accentfont: 'Open Sans', sans-serif;
+
+@mixin flexbox() {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+@mixin flexalign($align) {
+	-webkit-align-items: $align;
+	-moz-align-items: $align;
+	-ms-align-items: $align;
+	align-items: $align;
+}
+
+@media (min-width: 768px) {
+	.verticaldt
+	{
+		@include flexbox();	
+		@include flexalign(center);	
+	}
+}
+
+/*Maintenance*/
+body
+{
+	font-family: 'Open Sans', sans-serif;
+	font-family: $mainfont;	
+	line-height: 23px;
+	color: #58585a;
+}
+
+.page #content, .single-companies #content
+{
+	display: none;	
+}
+
+.paddingtop
+{
+	padding-top: 40px;	
+}
+
+.paddingbottom
+{
+	padding-bottom: 40px;	
+}
+
+.gray
+{
+	background-color: #e5e5e5;	
+}
+
+.white
+{
+	background-color: #ffffff;	
+}
+
+a
+{
+	color: $lightblue;	
+}
+/*End Maintenance*/
+
+
+/*Setting up Header*/
+.headertexture
+{
+	padding-top: 30px;
+	padding-bottom: 30px;	
+}
+.navbar-default
+{
+	background-image: none;
+	background-color: transparent;
+	border: 0;
+	box-shadow: none;
+	margin: 0;
+	font-size: 14px;
+	min-height: 30px;
+	font-family: $accentfont;	
+	
+	.navbar-header
+	{
+		margin: 0px;	
+	}
+	
+	.navbar-toggle
+	{
+		border: 0;
+		margin: 0;
+		padding: 0;
+		margin-top: 10px;
+		
+		.icon-bar
+		{
+			background-color: #000000;	
+		}
+	}
+	
+	.navbar-toggle:hover
+	{
+		background-color: transparent;
+		
+		.icon-bar
+		{
+			background-color: $blue;
+		}
+	}
+	.navbar-toggle:focus
+	{
+		background-color: transparent;
+		
+		.icon-bar
+		{
+			background-color: $blue;
+		}
+	}
+
+	.navbar-brand
+	{
+		padding: 0!important;
+		padding-left: 0;
+		margin: 0!important;
+		height: 30px;
+		
+		img
+		{
+			height: 30px;
+			width: auto;	
+		}
+	}
+	
+	#navbar
+	{
+		position: absolute;
+		width: 100%;
+		z-index: 220;
+		background-color: #efefef;
+		box-shadow: none;
+		margin: 0;
+		margin-top: 30px;
+		left: 0;
+		
+		
+		.navbar-nav
+		{
+			margin-top: 0;	
+			margin-bottom: 0;
+			
+			li
+			{
+				a
+				{
+					text-shadow: none;
+					color: $blue;
+				}
+				
+				a:hover, a:focus
+				{
+					color: $lightblue;	
+				}
+			}
+			.current_page_item, .current-menu-item
+			{
+				a
+				{
+					text-decoration: none;
+					color: $lightblue;
+					background-color: transparent;
+					background-image: none;
+					box-shadow: none;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.navbar-default
+	{
+		.navbar-header
+		{
+			margin-left: 15px;	
+		}
+		#navbar
+		{
+			position: static;
+			width: auto;
+			background-color: transparent;
+			color: #000000;
+			margin-top: 10px;
+				
+			.navbar-nav
+			{
+				
+				li
+				{
+					display: inline-block;
+					margin-right: 15px;
+					line-height: 1;
+					
+					a
+					{
+						text-shadow: none;
+						display: inline-block;
+						padding: 0;
+						text-transform: uppercase;
+						font-weight: 700;
+						line-height: 1;
+					}
+				}
+				
+				li:last-child
+				{
+					margin-right: 0;	
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.navbar-default
+	{
+		min-height: 46px;
+		
+		.navbar-brand
+		{
+			height: 46px;
+			
+			img
+			{
+				height: 46px;
+			}
+		}
+		
+		#navbar
+		{
+			margin-top: 20px;
+		}
+	}
+}
+/*End Setting up Header*/
+
+
+
+
+/*Company Box Area*/
+.companyarchive
+{
+	color: $blue;
+	
+	.companyrow
+	{
+		.col-sm-4
+		{
+			margin-bottom: 30px;
+			max-width: 320px;
+			
+			.innerbox
+			{
+				background-color: #ffffff;
+				padding: 20px;
+			}
+			
+			.textbelow
+			{
+				padding-right: 20px;
+				padding-left: 20px;
+				margin-top: 10px;	
+			}
+		}
+		.col-sm-4:last-child
+		{
+			margin-bottom: 0;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.companyarchive
+	{
+		.companyrow
+		{
+			.col-sm-4
+			{
+				max-width: none;
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+/*End Company Box Area*/
+
+
+/*Stacked Company Area*/
+.companyarchive
+{
+	.companystacked
+	{
+		margin-bottom: 40px;
+		color: #58585a;
+		
+		.col-sm-8
+		{
+			h3
+			{
+				margin-top: 0;	
+				color: #0e4e6c;
+			}
+			
+			a
+			{
+				font-family: $accentfont;	
+				font-weight: bold;
+				color: #3599be;
+				text-transform: uppercase;
+			}
+		}
+	}
+	
+	.companystacked:last-child
+	{
+		margin-bottom: 0px;
+	}
+}
+/*End Stacked Company Area*/
+
+
+/*Special Text*/
+.special
+{
+	text-align: center;
+	font-size: 21px;
+	
+	.smalllogo
+	{
+		margin-bottom: 20px;
+		
+		img
+		{
+			max-width: 150px;
+		}
+	}
+	
+	a
+	{
+		font-style: italic;
+	}
+	
+	.specialtext
+	{
+		line-height: 26px;
+		
+		p:last-child
+		{
+			margin-bottom: 0;	
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.special
+	{
+		text-align: left;
+		
+		.smalllogo
+		{
+			margin-bottom: 0;
+			
+			img
+			{
+				max-width: none;	
+			}
+		}
+	}
+}
+
+.specialbackground
+{
+	background-image: url(../images/hometexture.jpg);
+	background-size: cover;
+	background-position: center center;
+	padding-bottom: 60px;
+	padding-top: 60px;	
+	color: #ffffff;
+	
+	h2
+	{
+		margin: 0;
+		padding: 0;
+		margin-bottom: 20px;	
+		font-size: 30px;
+	}
+	
+	.sectiontext
+	{
+		text-transform: uppercase;	
+		font-size: 21px;
+		font-family: $accentfont;
+		line-height: 26px;	
+	}
+	
+	a
+	{
+		color: #ffe482;
+		text-transform: none;
+		font-style: italic;	
+		font-family: $mainfont;
+	}
+}
+/*End Special Text*/
+
+
+/*Divider Line Area*/
+.dividerline
+{
+	.line
+	{
+		border-bottom: 1px dotted #000000;	
+	}
+}
+/*End Divider Line Area*/
+
+
+/*Royal Slider*/
+.slideshow
+{
+	.rsUni
+	{
+		.rsBullets
+		{
+			position: absolute;
+			bottom: 15px;
+			
+			.rsBullet
+			{
+				cursor: pointer;	
+			}
+		}
+	}
+}
+/*End Royal Slider*/
+
+
+/*Footer*/
+.footercontainer
+{
+	padding-bottom: 30px;
+	font-family: $accentfont;
+	color: #414042;
+	font-size: 12px;
+	
+	.row
+	{
+		.col-xs-12
+		{
+			p:last-child
+			{
+				margin: 0;		
+			}
+		}
+	}
+}
+/*End Footer*/
+
+/*Section Title*/
+h2.sectiontitle
+{
+	margin-top: 0;
+	color: $blue;
+	font-size: 26px;
+}
+
+h4.sectiontitle
+{
+	text-transform: uppercase;
+	font-weight: bold;
+}
+/*End Section Title*/
+
+/*Simple Text Area*/
+.simpletextarea
+{
+	.normaltext
+	{
+		margin-bottom: 20px;
+		
+		ul
+		{
+			margin-left: 0px;
+			padding: 0;
+			font-weight: bold;	
+			list-style: none;
+			
+			li:before
+			{
+				content:"- ";
+			}
+			
+			li
+			{
+				a
+				{
+					color: #58585a;
+				}
+				
+				a:hover
+				{
+					color: #3599be;
+				}
+			}
+		}
+	}
+	
+	.bluetext
+	{
+		font-size: 18px;
+		color: $blue;
+		font-style: italic;	
+		margin-bottom: 20px;
+	}
+	
+	.sidebar
+	{
+		font-family: $accentfont;
+		text-transform: uppercase;
+		font-size: 21px;
+		margin-top: 40px;
+		font-weight: bold;
+		color: #818285;
+		line-height: 30px;
+		
+		.smalllogo
+		{
+			margin-bottom: 20px;
+			
+			img
+			{
+				max-width: 150px;	
+			}
+		}
+		
+		a
+		{
+			color: $lightblue;
+			font-style: italic;
+			text-transform: none;
+			font-weight: normal;
+			font-family: $mainfont;
+		}
+	}
+	
+	.smallimage
+	{
+		img
+		{
+			max-width: 300px;
+		}
+	}
+	
+	
+	.simpletextlink
+	{
+		a
+		{
+			font-weight: bold;
+			text-transform: uppercase;
+			font-family: "Open Sans", sans-serif;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.simpletextarea
+	{	
+		.sidebar
+		{
+			padding-left: 50px;
+			margin-top: 0;
+			
+			.smalllogo
+			{
+				img
+				{
+					margin: 0;	
+				}
+			}
+		}	
+	}
+}
+
+@media (min-width: 992px) {
+	.simpletextarea
+	{	
+		.sidebar
+		{
+			padding-left: 100px;
+		}	
+	}
+}
+/*End Simple Text Area*/
+
+
+/*Simple Title Section*/
+.col-sm-8
+{
+	.sectiontitlesimple.paddingtop
+	{
+		padding-top: 20px;
+	}
+	
+	.sectiontitlesimple.paddingbottom
+	{
+		padding-bottom: 20px;
+	}
+}
+/*End Simple Title SEction*/
+
+
+/*Team Single Page*/
+.single-team
+{
+	h2.sectiontitle
+	{
+		margin: 0;
+		padding: 0;	
+	}
+	
+	h3
+	{
+		font-family: $accentfont;
+		color: $lightblue;	
+		margin: 0;
+		padding: 0;
+		margin-bottom: 20px;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	
+	.blue
+	{
+		color: $blue;
+		font-style: italic;
+		font-size: 18px;
+	}
+	
+	.col-sm-4
+	{
+		margin-bottom: 20px;
+		
+		img
+		{
+			max-width: 320px;
+			margin: auto;	
+		}
+	}
+	
+	.emaillink
+	{
+		font-weight: bold;
+		text-transform: uppercase;
+		font-family: $accentfont;	
+	}
+}
+
+
+@media (min-width: 768px) {
+	.single-team
+	{
+		.col-sm-4
+		{
+			margin-bottom: 0;
+			
+			img
+			{
+				max-width: none;
+			}
+		}
+	}
+}
+/*End Team Single Page*/
+
+
+/*Team Archive Area*/
+.teamarchive
+{
+	.teamrow
+	{
+		margin-bottom: 0px;	
+		
+		.col-sm-4
+		{
+			margin-bottom: 30px;	
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.teamarchive
+	{
+		.teamrow
+		{
+			margin-bottom: 30px;	
+			
+			.col-sm-4
+			{
+				margin-bottom: 0;	
+			}
+		}
+		
+		.teamrow:last-child
+		{
+			margin-bottom: 30px;	
+		}
+	}
+}
+/*End Team Archive Area*/
+
+
+
+@media (min-width: 768px) {
+	
+}
+
+@media (min-width: 992px) {
+	
+}
+
+@media (min-width: 1200px) {
+
+}
